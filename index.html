@@ -1,68 +1,56 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>A-Reum POD</title>
-     <link rel="stylesheet" href="style.css"/>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<style type="text/css">
-		* {margin:0; padding:0}
-		ul, li {list-style:none;}
-		#wrapBox {position:relative;}
-		.imgBox {position:relative; margin:0 auto;}
-		.imgBox li {position:absolute;}
-		.dotBox {position:absolute; top:250px; left: 150px; margin:0 auto; width:60px; z-index:3;}
-		.dotBox li {float:top;}
-		.dotBox a {display:block; width:15px; height:15px; background:url("images/dots4.png") no-repeat; background-position:0 -1px;}
-		.dotBox li.active a {background-position:0 -33px}
-
-    </style>
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>A-Reum POD</title>
+        <link rel="stylesheet" href="/stylesheets/style.css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
         <div class="container">
-        <div class="layout-top">
-            <ul class="top">
-            <li class="top-image"><img src="https://s-media-cache-ak0.pinimg.com/originals/ee/b4/a3/eeb4a374cbfcb6b4f38053f2ea1c5086.jpg"></li>
-  <li class="top-font">Empty Myself <br>
-      To Be Filled. </li>
-            </ul>
-</div>
+            <section id="header">
+                <img src="https://s-media-cache-ak0.pinimg.com/originals/ee/b4/a3/eeb4a374cbfcb6b4f38053f2ea1c5086.jpg">
+                <h1 class="top-font">Empty Myself<br>To Be Filled.</h1>
+            </section>
+            <nav>
+                <ul class="line-menu">
+                    <li>portfolio poster</li>
+                    <li>editorial</li>
+                    <li>mobile</li>
+                    <li>project planning</li>
+                </ul>
+            </nav>
+            <section id="wrapBox">
+                <ul class="imgBox">
+                    <li class="act">
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/c3/3f/85/c33f8594401f23f6f91815a44ad83a09.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/6d/75/c9/6d75c943affbbe041b7d651cb32996e7.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/1a/9a/a2/1a9aa20d77c32b8ec82922c478621144.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/57/08/10/5708108669c481f955beb31f77f358a3.jpg" alt="" />
+                    </li>
+                </ul>
+                <ul class="dotBox">
+                    <li class="active"><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>
+                    <li><a></a></li>
+                </ul>
+                <div class="subtitle">
+                    <div class="poster">
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/95/4d/ed/954dedb1b56101f0a600adc90cb85b16.jpg"/>
+                    </div>
+                    <div class="poster2">
+                        <img src="https://s-media-cache-ak0.pinimg.com/originals/22/68/63/2268631959ef34f83191e413837f3a40.jpg"/>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="line-menu">
-        <p class="menu-p"> portfolio   poster    |    editorial    |    mobile    |    project planning </p>
-        </div>
-
-	<div id="wrapBox">
-		<ul class="imgBox">
-			<li class="act"><img src="https://s-media-cache-ak0.pinimg.com/originals/c3/3f/85/c33f8594401f23f6f91815a44ad83a09.jpg" alt="" />
-            </li>
-            <li><img src="https://s-media-cache-ak0.pinimg.com/originals/6d/75/c9/6d75c943affbbe041b7d651cb32996e7.jpg" alt="" /></li>
-			<li><img src="https://s-media-cache-ak0.pinimg.com/originals/1a/9a/a2/1a9aa20d77c32b8ec82922c478621144.jpg" alt="" /></li>
-			<li><img src="https://s-media-cache-ak0.pinimg.com/originals/57/08/10/5708108669c481f955beb31f77f358a3.jpg" alt="" /></li>
-		</ul>
-		<ul class="dotBox">
-			<li class="active"><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-		</ul>
-        <ul class="subtitle">
-        <li class="poster"><img src="https://s-media-cache-ak0.pinimg.com/originals/95/4d/ed/954dedb1b56101f0a600adc90cb85b16.jpg"/>
-             <li class="poster2"><img src="https://s-media-cache-ak0.pinimg.com/originals/22/68/63/2268631959ef34f83191e413837f3a40.jpg"/></li>
-        </ul>
-        
-	</div>
-	<script>
-		$(document).ready(function(){
-			$('.imgBox li').css({display:'none',opacity:0});
-			$('.imgBox li.act').css({display:'block',opacity:1});
-			$('.dotBox a').click(function(){
-				var imgNum=$('.dotBox a').index(this);
-				$(this).parent().addClass('active').siblings().removeClass();
-				$('.imgBox li.act').animate({opacity:0},1000,function(){$(this).css('display','none')}).removeClass('act');
-				$('.imgBox li').eq(imgNum).css('display','block').animate({opacity:1},1000).addClass('act');
-			});
-		})
-	</script>
-</body>
+        <script src="javascripts/main.js"></script>
+    </body>
 </html>
