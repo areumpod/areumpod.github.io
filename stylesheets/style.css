@@ -135,6 +135,7 @@ nav ul li:first-child, li:last-child {
         position: absolute;
     width: 88%;
     padding: 40px 0;
+        cursor: pointer;  
         z-index: 3;
 }
 
